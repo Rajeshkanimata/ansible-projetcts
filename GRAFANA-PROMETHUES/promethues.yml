@@ -99,8 +99,7 @@
         state: restarted
 
 
-Run:
-ansible-playbook -i inventory.ini prometheus.yml
-Check:
-http://10.0.0.20:9090
-________________________________________
+# Run:
+# ansible-playbook -i inventory.ini prometheus.yml
+# Check:
+# http://10.0.0.20:9090
