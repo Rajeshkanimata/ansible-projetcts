@@ -50,8 +50,8 @@
         name: node_exporter
         enabled: yes
         state: started
-Run:
-ansible-playbook -i inventory.ini node-exporter.yml
-Verify:
-curl http://10.0.0.21:9100/metrics
-curl http://10.0.0.22:9100/metrics
+# Run:
+# ansible-playbook -i inventory.ini node-exporter.yml
+# Verify:
+# curl http://10.0.0.21:9100/metrics
+# curl http://10.0.0.22:9100/metrics
