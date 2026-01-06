@@ -61,6 +61,12 @@ result should be ping = pong if 2 serevr 2 times it shows
 
 make sure to give IAM role else it will reject
 
+test it wuth sample playbook
+
+
+HERE WE TESTED DYNAMIC INVENTORY FOR A SINGLE TAG SO FOR GROUPS WE USE THIS 
+
+REPLACE IT IN aws_ec2.yml
 
 
 
