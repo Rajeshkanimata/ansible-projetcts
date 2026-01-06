@@ -1,0 +1,72 @@
+# Install ansible andpython and its req dependecies
+
+  
+sudo yum install ansible -y   
+sudo yum update -y 
+sudo yum install python -y     
+sudo wget https://bootstrap.pypa.io/get-pip.py #download pip (or) yum install python3-pip -y
+sudo python get-pip.py 
+sudo pip install boto3
+sudo pip show boto3           
+
+
+	Install ansible galaxy                    #PACKAGE MANAGER
+
+	ansible-galaxy collection install amazon.aws   #inatll amazon.aws piugin from this galaxy
+
+
+
+-----go to ansible.cfg file and paste below data  
+
+-------sudo sudo python get-pip.py 
+sudo pip install boto3
+sudo pip show boto3           
+
+
+paste this in above this path sudo vi /etc/ansible/ansible.cfg
+
+///////////////////////////////////////////////////////////////////
+[defaults]
+enable_plugins = aws_ec2
+inventory =./aws_ec2.yml
+host_key_checking = False
+////////////////////////////////////////////////////////////////////
+
+
+
+#move to /etc/ansible ad create a file aws_ec2.yml, and paste this below code
+
+cd etc/ansible/
+vi aws_ec2.yml 
+
+and paste this
+
+
+
+//////////////////////////////////////////////////////////////////////
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-1
+filters:
+  tag:Name: 
+    - dev
+    #add multiple tag names here if required
+//////////////////////////////////////////////////////////////////////
+
+now to test 
+
+ansible all -m ping 
+
+result should be ping = pong if 2 serevr 2 times it shows
+
+make sure to give IAM role else it will reject
+
+
+
+
+
+
+
+
+
+
