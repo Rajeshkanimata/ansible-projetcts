@@ -20,8 +20,8 @@
         name: grafana-server
         enabled: yes
         state: started
-Run:
-ansible-playbook -i inventory.ini grafana.yml
-Access:
-http://10.0.0.20:3000
-admin / admin
+# Run:
+# ansible-playbook -i inventory.ini grafana.yml
+# Access:
+# http://<IP>:3000
+# admin / admin
