@@ -1,0 +1,27 @@
+- name: Install Grafana
+  hosts: prometheus_grafana
+  become: yes
+
+  tasks:
+    - name: Add Grafana repo
+      yum_repository:
+        name: grafana
+        baseurl: https://rpm.grafana.com
+        gpgcheck: yes
+        gpgkey: https://rpm.grafana.com/gpg.key
+
+    - name: Install Grafana
+      yum:
+        name: grafana
+        state: present
+
+    - name: Start Grafana
+      systemd:
+        name: grafana-server
+        enabled: yes
+        state: started
+Run:
+ansible-playbook -i inventory.ini grafana.yml
+Access:
+http://10.0.0.20:3000
+admin / admin
