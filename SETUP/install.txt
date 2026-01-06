@@ -1,0 +1,31 @@
+#install ansible and genrated ssh keygen and mv to .ssh and cat id_rsa.pub key an dcot it into target servers
+
+dnf install ansible -y
+cd .ssh
+cat id_rsa.pub 
+
+#move to the targer serves if root user avoid permission else give chmod 600 an dchmod 700
+
+sudo su -
+cd .ssh 
+vi authorized_keys  #copy
+
+to all the target servers repaet the process to configure
+
+now create a inventory list in ansible 
+
+vi /etc/ansible/hosts
+[target]
+172.31.25.219
+172.31.20.152
+
+[web]
+172.31.20.152
+
+
+# if asks for fingerprint  to avoid pate this here
+vi /etc/ansible.cfg
+
+[defaults]
+host_key_checking = False  # this will solve
+
